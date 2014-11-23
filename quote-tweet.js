@@ -53,22 +53,43 @@
                 return;
             }
 
-            var end_y = (e.y || e.clientY),
-                best_guess_top_padding = (end_y < start_y) ? end_y : start_y,
-                styleTop = best_guess_top_padding - 60,
-                end_x = (e.x || e.clientX),
-                styleLeft = start_x + (end_x - start_x) / 2;
-
             tweet_quote_selection = getTextSelection();
 
             if ( tweet_quote_selection ) {
+                var styleTop = getSelectionTop(),
+                    end_x = (e.x || e.clientX),
+                    styleLeft = start_x + (end_x - start_x) / 2;
                 tweet_popup.style.top = styleTop + 'px';
                 tweet_popup.style.left = styleLeft + 'px';
                 tweet_popup.style.display = 'block';
             } else {
                 hidePopUp();
             }
+
+            function getSelectionTop () {
+                var end_y = (e.y || e.clientY),
+                    best_guess_top_padding = (end_y < start_y) ? end_y : start_y,
+                    selTop = best_guess_top_padding - 25;
+                if (window.getSelection) {
+                    var sel = window.getSelection();
+                    if (sel.rangeCount > 0) {
+                        var range = sel.getRangeAt(0);
+                        if (!range.collapsed && range.getClientRects) {
+                            var startRange = range.cloneRange();
+                            startRange.collapse(true);
+                            selTop = startRange.getClientRects()[0].top;
+                            startRange.detach();
+                        }
+                    }
+                }
+                return selTop + getScrollTop();
+            }
         };
+
+        function getScrollTop () {
+            var doc = document.documentElement;
+            return (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        }
 
         window.onresize = function () {
             if ( orig_resize ) {
@@ -88,8 +109,6 @@
 
             return selection.toString();
         }
-
-
 
         function createPopUp() {
             var popup = document.createElement('div');
