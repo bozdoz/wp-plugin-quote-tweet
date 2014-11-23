@@ -1,6 +1,3 @@
-body {
-    position: relative;
-}
 .quote-tweet-popup {
     background: #55ACEE;
     background: #55ACEE url(/wp-content/plugins/quote-tweet/images/twitter_logo_sm.png) no-repeat center center;
@@ -10,7 +7,7 @@ body {
     
     margin-left: -30px;
     height: 60px;
-    margin-top: -115px;
+    margin-top: -75px;
     display: none;
     cursor: pointer;
     color: white;
