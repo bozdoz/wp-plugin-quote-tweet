@@ -1,5 +1,4 @@
 .quote-tweet-popup {
-    background: #55ACEE;
     background: #55ACEE url(/wp-content/plugins/quote-tweet/images/twitter_logo_sm.png) no-repeat center center;
     position: absolute;
     width: 60px;
@@ -15,6 +14,20 @@
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+
 }
 .quote-tweet-popup:after {
     content: "";
@@ -26,6 +39,7 @@
     width: 1px;
     display: block;
 }
+
 ::selection {
 	color:white;
     background: #55ACEE;
@@ -33,4 +47,19 @@
 ::-moz-selection {
 	color:white;
     background: #55ACEE;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
