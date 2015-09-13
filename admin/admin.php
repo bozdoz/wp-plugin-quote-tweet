@@ -8,7 +8,9 @@ if ( isset($_POST['submit']) ) {
 
 	foreach ($quote_tweet_static_options as $type=>$arrs) {
 		foreach($arrs as $k=>$v) {
-			update_option($k, $form[$k]);
+			if(!empty($form[$k])) {
+				update_option($k, $form[$k]);
+			}
 		}
 	}
 ?>
