@@ -90,5 +90,3 @@
         }
     }
     register_uninstall_hook( __FILE__, 'quote_tweet_uninstall' );
-
-?>
