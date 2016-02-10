@@ -7,8 +7,8 @@ Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
 Tested up to: 4.4.2
-Version: 0.2
-Stable tag: 0.2
+Version: 0.3
+Stable tag: 0.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 
 == Changelog ==
 
+= 0.3 =
+* Tightened whitespace and comments, made globals explicit; eventually move most of the plugin into a function executed on the `init` action.
+
 = 0.2 =
 * Should be more compatible with other plugins.
 
@@ -46,6 +49,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 * First Version. Select text to see Twitter prompt.
 
 == Upgrade Notice ==
+
+= 0.3 =
+Fixed warning of # of characters of unexpected output
 
 = 0.2 =
 Removed windows.onload and moved script to the bottom of page for compatibility with other plugins and to save on load time.
