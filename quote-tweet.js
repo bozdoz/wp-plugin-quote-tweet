@@ -109,6 +109,10 @@
         document.body.appendChild(popup);
 
         popup.addEventListener('click', function () {
+            var current_url = encodeURIComponent( window.location.href );
+
+            // add xhr...
+
             var tweet_url = 'https://twitter.com/intent/tweet?text=';
             tweet_url += encodeURIComponent( tweet_quote_selection );
             tweet_url += '&url=' + encodeURIComponent( window.location.href );

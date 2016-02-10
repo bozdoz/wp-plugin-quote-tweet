@@ -2,6 +2,8 @@
 
 global $quote_tweet_static_options, $quote_tweet_static_help;
 
+unset($quote_tweet_static_options['serialized']);
+
 if ( isset($_POST['submit']) ) {
 	/* copy and overwrite $post for checkboxes */
 	$form = $_POST;
@@ -13,6 +15,7 @@ if ( isset($_POST['submit']) ) {
 			}
 		}
 	}
+	//flush_rewrite_rules();
 ?>
 <div class="updated">
    <p>Options Updated!</p>
