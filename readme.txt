@@ -7,8 +7,8 @@ Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
 Tested up to: 4.4.2
-Version: 0.3
-Stable tag: 0.3
+Version: 0.4
+Stable tag: 0.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,8 +39,11 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 
 == Changelog ==
 
+= 0.4 =
+* Added z index so that the popup will show up on most sites; added retina Twitter logo.
+
 = 0.3 =
-* Tightened whitespace and comments, made globals explicit; eventually move most of the plugin into a function executed on the `init` action.
+* Tightened whitespace and comments, made globals explicit; eventually moved most of the plugin into a function executed on the `init` action.
 
 = 0.2 =
 * Should be more compatible with other plugins.
@@ -49,6 +52,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 * First Version. Select text to see Twitter prompt.
 
 == Upgrade Notice ==
+
+= 0.4 =
+Fixed issue where popup didn't show up on some sites due to z-indexing; added retina support.
 
 = 0.3 =
 Fixed warning of # of characters of unexpected output

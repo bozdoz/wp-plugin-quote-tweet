@@ -63,6 +63,7 @@
             var end_y = (e.y || e.clientY),
                 best_guess_top_padding = (end_y < start_y) ? end_y : start_y,
                 selTop = best_guess_top_padding - 25;
+            
             if (window.getSelection) {
                 var sel = window.getSelection();
                 if (sel.rangeCount > 0) {
@@ -74,7 +75,8 @@
                         startRange.detach();
                     }
                 }
-            }
+            } 
+
             return selTop + getScrollTop();
         }
     };
@@ -105,21 +107,20 @@
 
     function createPopUp() {
         var popup = document.createElement('div');
+        
         popup.className = 'quote-tweet-popup';
-        document.body.appendChild(popup);
+        document.body.appendChild( popup );
 
         popup.addEventListener('click', function () {
-            var current_url = encodeURIComponent( window.location.href );
-
-            // add xhr...
-
             var tweet_url = 'https://twitter.com/intent/tweet?text=';
+
             tweet_url += encodeURIComponent( tweet_quote_selection );
             tweet_url += '&url=' + encodeURIComponent( window.location.href );
 
             if (QuoteTweet.via) {
                 tweet_url += '&via=' + encodeURIComponent(QuoteTweet.via);
             }
+
             window.open(tweet_url, '_blank', 'width=640,height=444');
             hidePopUp();
         });

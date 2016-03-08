@@ -3,7 +3,7 @@
 Plugin Name: Quote Tweet
 Plugin URI: http://twitter.com/bozdoz/
 Description: A plugin for quickly tweeting a text selection.
-Version: 0.3
+Version: 0.4
 Author: bozdoz
 Author URI: http://twitter.com/bozdoz/
 License: GPL2
@@ -11,16 +11,16 @@ License: GPL2
 
 $quote_tweet_static_options = array(
     'text' => array('quote_tweet_twitter_name' => 'bozdoz'),
-    'checks' => array('quote_tweet_add_mention_to_tweets' => '0'),
-    'serialized' => array()
+    'checks' => array('quote_tweet_add_mention_to_tweets' => '0')
+    //'serialized' => array()
 );
 
 $quote_tweet_static_help = array(
     'quote_tweet_twitter_name' => 'Without the @ sign!',
-    'quote_tweet_bitly_access_token' => '(Optional) Use bit.ly to generate a shortlink.  Easily trackable. Sign up for bit.ly and get an access token <a href="https://bitly.com/a/oauth_apps" target="_blank">here</a>.',
-    'quote_tweet_bitly_api_endpoint' => 'A url hosted on your site to access the bit.ly API, if an access token is given',
-    'quote_tweet_add_mention_to_tweets' => 'If this is checked, tweets will have "via @your-twitter-name" at the end of the suggested tweet.',
-    'quote_tweet_use_bitly' => 'If this is checked, the URLs will be shortened with your bit.ly account, if given.',
+    'quote_tweet_add_mention_to_tweets' => 'If this is checked, tweets will have "via @your-twitter-name" at the end of the suggested tweet.'
+    //'quote_tweet_bitly_access_token' => '(Optional) Use bit.ly to generate a shortlink.  Easily trackable. Sign up for bit.ly and get an access token <a href="https://bitly.com/a/oauth_apps" target="_blank">here</a>.',
+    //'quote_tweet_bitly_api_endpoint' => 'A url hosted on your site to access the bit.ly API, if an access token is given',
+    //'quote_tweet_use_bitly' => 'If this is checked, the URLs will be shortened with your bit.ly account, if given.',
 );
 
 add_action('init', 'quote_tweet_init');

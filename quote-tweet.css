@@ -2,22 +2,18 @@
     background: #55ACEE url(/wp-content/plugins/quote-tweet/images/twitter_logo_sm.png) no-repeat center center;
     position: absolute;
     width: 60px;
-    /* ml = half of width to center */
-    
-    margin-left: -30px;
     height: 60px;
-    margin-top: -75px;
+    margin-left: -30px;
+    margin-top: -80px;
     display: none;
     cursor: pointer;
-    color: white;
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    box-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
-
     animation: .5s fadeIn;
     -webkit-animation: .5s fadeIn;
     -moz-animation: .5s fadeIn;
+    z-index:100;
 }
 .quote-tweet-popup:after {
     content: "";
@@ -52,4 +48,18 @@
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   -moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 2dppx),
+only screen and (                min-resolution: 192dpi) { 
+    /* retina */
+    .quote-tweet-popup {
+        background: #55ACEE url(/wp-content/plugins/quote-tweet/images/twitter_logo_sm_retina.png) no-repeat center center;
+        background-size:30px 24px;
+    }
 }

@@ -24,7 +24,5 @@ I intend for this plugin to be clean and simple, so please make your pull reques
 Wish List
 ---------
 
-* Options to animate
 * Better sizing or opacity (overall better ux)
-* Implement retina version (outstanding pull request)
 * Implement short url (outstanding request)
