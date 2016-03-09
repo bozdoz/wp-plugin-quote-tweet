@@ -7,8 +7,8 @@ Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
 Tested up to: 4.4.2
-Version: 0.4
-Stable tag: 0.4
+Version: 0.5
+Stable tag: 0.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 
 == Changelog ==
 
+= 0.5 =
+* Added timeouts, contextmenu event, and `addEventListener` for all events.
+
 = 0.4 =
 * Added z index so that the popup will show up on most sites; added retina Twitter logo.
 
@@ -52,6 +55,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 * First Version. Select text to see Twitter prompt.
 
 == Upgrade Notice ==
+
+= 0.5 =
+Right-click doesn't hide selection; popup show/hide is more accurate with delayed checks for selection; added addEventListeners for all events.
 
 = 0.4 =
 Fixed issue where popup didn't show up on some sites due to z-indexing; added retina support.
