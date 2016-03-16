@@ -7,17 +7,12 @@
         showTO;
 
     document.addEventListener('mousedown', function (e) {
-        if (e.button !== 0) {
+        if (e.button !== 0 || 
+            e.target === tweet_popup ) {
             return;
         }
 
         hidePopUp();
-
-        if ( e.target === tweet_popup ) {
-            start_x = null;
-            e.preventDefault();
-            return;
-        }
 
         start_x = (e.x || e.clientX);
         start_y = (e.y || e.clientY);
@@ -27,6 +22,10 @@
     document.addEventListener('contextmenu', delayedTextSelectionCheck);
 
     document.addEventListener('mouseup', function (e) {
+
+        if (e.target === tweet_popup) {
+            return;
+        }
 
         delayedTextSelectionCheck();
 
@@ -113,7 +112,8 @@
     function delayedTextSelectionCheck () {
         window.clearTimeout( checkTO );
         checkTO = window.setTimeout(function () {
-            if (!getTextSelection()) {
+            tweet_quote_selection = getTextSelection();
+            if (!tweet_quote_selection) {
                 hidePopUp();
             }
         }, 100);
