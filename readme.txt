@@ -7,8 +7,8 @@ Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
 Tested up to: 4.4.2
-Version: 0.5
-Stable tag: 0.5
+Version: 0.6
+Stable tag: 0.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 
 == Changelog ==
 
+= 0.6 =
+* Fix to overwritten variable which wiped text selection in 0.5 (sorry, all affected).
+
 = 0.5 =
 * Added timeouts, contextmenu event, and `addEventListener` for all events.
 
@@ -55,6 +58,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 * First Version. Select text to see Twitter prompt.
 
 == Upgrade Notice ==
+
+= 0.6 =
+Critical fix to some sloppy code in 0.5.
 
 = 0.5 =
 Right-click doesn't hide selection; popup show/hide is more accurate with delayed checks for selection; added addEventListeners for all events.

@@ -3,7 +3,7 @@
 Plugin Name: Quote Tweet
 Plugin URI: http://twitter.com/bozdoz/
 Description: A plugin for quickly tweeting a text selection.
-Version: 0.5
+Version: 0.6
 Author: bozdoz
 Author URI: http://twitter.com/bozdoz/
 License: GPL2
