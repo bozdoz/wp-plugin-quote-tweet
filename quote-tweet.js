@@ -98,7 +98,7 @@
                 tweet_url += '&via=' + encodeURIComponent(QuoteTweet.via);
             }
 
-            window.open(tweet_url, '_blank', 'width=640,height=444');
+            window.open(tweet_url, 'intent', 'scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420');
             hidePopUp();
         });
 
