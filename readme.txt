@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Quote Tweet ===
 Author: bozdoz
 Author URI: http://www.twitter.com/bozdoz/
 Plugin URI: http://wordpress.org/plugins/quote-tweet/
@@ -6,7 +6,7 @@ Contributors: bozdoz
 Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
-Tested up to: 4.6
+Tested up to: 4.7
 Version: 0.6
 Stable tag: 0.6
 License: GPLv2

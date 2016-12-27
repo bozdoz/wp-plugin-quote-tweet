@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Quote Tweet
-Plugin URI: http://twitter.com/bozdoz/
-Description: A plugin for quickly tweeting a text selection.
-Version: 0.6
-Author: bozdoz
-Author URI: http://twitter.com/bozdoz/
-License: GPL2
+    Plugin Name: Quote Tweet
+    Plugin URI: http://twitter.com/bozdoz/
+    Description: A plugin for quickly tweeting a text selection.
+    Version: 0.6
+    Author: bozdoz
+    Author URI: http://twitter.com/bozdoz/
+    License: GPL2
 */
 
 $quote_tweet_static_options = array(
