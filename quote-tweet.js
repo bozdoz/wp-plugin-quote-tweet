@@ -98,6 +98,10 @@
                 tweet_url += '&via=' + encodeURIComponent(QuoteTweet.via);
             }
 
+            if (QuoteTweet.hashtags) {
+                tweet_url += '&hashtags=' + encodeURIComponent(QuoteTweet.hashtags);
+            }
+
             window.open(tweet_url, 'intent', 'scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420');
             hidePopUp();
         });

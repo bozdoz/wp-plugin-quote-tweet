@@ -3,21 +3,25 @@
     Plugin Name: Quote Tweet
     Plugin URI: http://twitter.com/bozdoz/
     Description: A plugin for quickly tweeting a text selection.
-    Version: 0.6
+    Version: 0.7
     Author: bozdoz
     Author URI: http://twitter.com/bozdoz/
     License: GPL2
 */
 
 $quote_tweet_static_options = array(
+    'checks' => array('quote_tweet_add_mention_to_tweets' => '0'),
     'text' => array('quote_tweet_twitter_name' => 'bozdoz'),
-    'checks' => array('quote_tweet_add_mention_to_tweets' => '0')
+    'checks' => array('quote_tweet_add_hashtags' => '0'),
+    'text' => array('quote_tweet_hashtags' => 'quotetweet,liveauthentic')
     //'serialized' => array()
 );
 
 $quote_tweet_static_help = array(
     'quote_tweet_twitter_name' => 'Without the @ sign!',
-    'quote_tweet_add_mention_to_tweets' => 'If this is checked, tweets will have "via @your-twitter-name" at the end of the suggested tweet.'
+    'quote_tweet_add_mention_to_tweets' => 'If this is checked, tweets will have "via @your-twitter-name" at the end of the suggested tweet.',
+    'quote_tweet_add_hashtags' => 'If this is checked, tweets will include the desired default hashtags.',
+    'quote_tweet_hashtags' => 'Comma-separated list of hashtags.'
     //'quote_tweet_bitly_access_token' => '(Optional) Use bit.ly to generate a shortlink.  Easily trackable. Sign up for bit.ly and get an access token <a href="https://bitly.com/a/oauth_apps" target="_blank">here</a>.',
     //'quote_tweet_bitly_api_endpoint' => 'A url hosted on your site to access the bit.ly API, if an access token is given',
     //'quote_tweet_use_bitly' => 'If this is checked, the URLs will be shortened with your bit.ly account, if given.',
@@ -59,12 +63,18 @@ function quote_tweet_init () {
         if ( ! is_admin() ) {
             $quote_tweet_twitter_name = get_option('quote_tweet_twitter_name', '');
             $quote_tweet_add_mention_to_tweets = get_option('quote_tweet_add_mention_to_tweets', '');
+            $quote_tweet_hashtags = get_option('quote_tweet_hashtags', '');
+            $quote_tweet_add_hashtags = get_option('quote_tweet_add_hashtags', '');
 
             echo "<script>var QuoteTweet = {};";
 
             if ( $quote_tweet_twitter_name &&
                 $quote_tweet_add_mention_to_tweets ) {
                 echo "QuoteTweet.via = '$quote_tweet_twitter_name';";
+            }
+            if ( $quote_tweet_hashtags &&
+                $quote_tweet_add_hashtags ) {
+                echo "QuoteTweet.hashtags = '$quote_tweet_hashtags';";
             }
             echo "</script>";
 

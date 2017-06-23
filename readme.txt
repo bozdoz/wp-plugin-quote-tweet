@@ -6,9 +6,9 @@ Contributors: bozdoz
 Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
-Tested up to: 4.7
-Version: 0.6
-Stable tag: 0.6
+Tested up to: 4.8
+Version: 0.7
+Stable tag: 0.7
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 
 == Changelog ==
 
+= 0.7 =
+* Added default hashtags.
+
 = 0.6 =
 * Fix to overwritten variable which wiped text selection in 0.5 (sorry, all affected).
 
@@ -58,6 +61,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 * First Version. Select text to see Twitter prompt.
 
 == Upgrade Notice ==
+
+= 0.7 =
+Added default hashtags.
 
 = 0.6 =
 Critical fix to some sloppy code in 0.5.
