@@ -6,7 +6,7 @@ Contributors: bozdoz
 Donate link: https://www.gittip.com/bozdoz/
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
-Tested up to: 4.8
+Tested up to: 4.9
 Version: 0.7
 Stable tag: 0.7
 License: GPLv2
