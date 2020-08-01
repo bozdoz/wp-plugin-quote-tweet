@@ -1,11 +1,11 @@
 <?php
 /*
     Plugin Name: Quote Tweet
-    Plugin URI: http://twitter.com/bozdoz/
-    Description: A plugin for quickly tweeting a text selection.
-    Version: 0.7
+    Plugin URI: https://bozdoz.com
+    Description: Show a tweet popup when a user highlights text on your site!
+    Version: 0.7.1
     Author: bozdoz
-    Author URI: http://twitter.com/bozdoz/
+    Author URI: https://bozdoz.com
     License: GPL2
 */
 
@@ -96,6 +96,7 @@ function quote_tweet_init () {
         add_options_page("Quote Tweet", "Quote Tweet", 'manage_options', 'quote-tweet', 'settings_page');
         function settings_page () {
             wp_enqueue_style( 'quote_tweet_admin_style' );
+            $plugin_data = get_plugin_data(__FILE__);
             include 'admin/admin.php';
         }
     }

@@ -1,14 +1,14 @@
 === Quote Tweet ===
 Author: bozdoz
-Author URI: http://www.twitter.com/bozdoz/
+Author URI: https://bozdoz.com
 Plugin URI: http://wordpress.org/plugins/quote-tweet/
 Contributors: bozdoz
-Donate link: https://www.gittip.com/bozdoz/
+Donate link: https://www.paypal.me/bozdoz
 Tags: twitter, tweet, text selection, share, social media
 Requires at least: 3.0.1
-Tested up to: 4.9
-Version: 0.7
-Stable tag: 0.7
+Tested up to: 5.5
+Version: 0.7.1
+Stable tag: 0.7.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ None yet! Shoot me a question [@bozdoz](http://www.twitter.com/bozdoz/).
 1. Select text to see the prompt.
 
 == Changelog ==
+
+= 0.7.1 =
+* Changes some styling; twitter intents no longer open in new window by default; prefers new tabs.
 
 = 0.7 =
 * Added default hashtags.

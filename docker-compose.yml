@@ -32,7 +32,7 @@ services:
       WP_PASSWORD: password
       
   wordpress:
-    image: wordpress
+    image: wordpress:php7.4
     depends_on:
       - cli
     volumes:

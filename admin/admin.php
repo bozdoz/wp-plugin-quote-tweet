@@ -33,12 +33,21 @@ if ( isset($_POST['submit']) ) {
 </div>
 <?php
 }
+
+$title = $plugin_data['Name'];
+$description = $plugin_data['Description'];
+$version = $plugin_data['Version'];
 ?>
 
 <div class="wrap">
-	<h2>Quote Tweet</h2>
+	<h1><?php echo $title; ?> <small>version: <?php echo $version; ?></small></h1>
+	<p><?php echo $description; ?></p>
 	<div class="wrap">
 	<form method="post">
+		<div class="container">
+				<h2><?php _e('Settings', 'quote-tweet'); ?></h2>
+				<hr>
+		</div>
 	<?php
 	function option_label ($opt = 'twitter_name') {
 	    $opt = explode('_', $opt);
