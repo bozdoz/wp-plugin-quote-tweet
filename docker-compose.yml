@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mariadb
+    volumes:
+      - wp_db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+
+  cli:
+    image: bozdoz/wordpress-initialize
+    depends_on:
+      - mysql
+    volumes:
+      - wordpress:/var/www/html
+      - .:/var/www/html/wp-content/plugins/quote-tweet
+      - ./docker-initialize.sh:/app/initialize.sh
+      #-------------------------------------------------
+      # Uncomment these along with the wordpress service
+      # to debug themes and plugins
+      #-------------------------------------------------
+      - ./theme:/var/www/html/wp-content/themes/twentynineteen
+      # - ./plugins:/var/www/html/wp-content/plugins
+    environment:
+      WP_PLUGINS: quote-tweet
+      WORDPRESS_PORT: ${WP_PORT:-8020}
+      WP_PORT: ${WP_PORT:-8020}
+      WP_URL: ${WP_URL:-localhost:8020}
+      WP_USER: admin
+      WP_PASSWORD: password
+      
+  wordpress:
+    image: wordpress
+    depends_on:
+      - cli
+    volumes:
+      - wordpress:/var/www/html
+      - .:/var/www/html/wp-content/plugins/quote-tweet
+      #-------------------------------------------------
+      # Uncomment these along with the cli service
+      # to debug themes and plugins
+      #-------------------------------------------------
+      - ./theme:/var/www/html/wp-content/themes/twentynineteen
+      # - ./plugins:/var/www/html/wp-content/plugins
+    ports:
+      - ${WP_PORT:-8020}:80
+    restart: always
+    environment:
+      WORDPRESS_DB_PASSWORD: rootpass
+
+volumes:
+  wp_db:
+  wordpress:

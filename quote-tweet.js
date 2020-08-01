@@ -1,10 +1,10 @@
 (function() {
-    var start_x,
-        start_y,
-        tweet_quote_selection = '',
-        tweet_popup = createPopUp(),
-        checkTO,
-        showTO;
+    var start_x;
+    var start_y;
+    var tweet_quote_selection = '';
+    var tweet_popup = createPopUp();
+    var checkTO;
+    var showTO;
 
     document.addEventListener('mousedown', function (e) {
         if (e.button !== 0 || 
@@ -32,18 +32,19 @@
         window.clearTimeout(showTO);
         showTO = window.setTimeout(function () {
             if ( getTextSelection() ) {
-                var styleTop = getSelectionTop(),
-                    end_x = (e.x || e.clientX),
-                    styleLeft = start_x + (end_x - start_x) / 2;
+                var styleTop = getSelectionTop();
+                var end_x = (e.x || e.clientX);
+                var styleLeft = start_x + (end_x - start_x) / 2;
+
                 tweet_popup.style.top = styleTop + 'px';
                 tweet_popup.style.left = styleLeft + 'px';
                 tweet_popup.style.display = 'block';
             }
 
             function getSelectionTop () {
-                var end_y = (e.y || e.clientY),
-                    best_guess_top_padding = (end_y < start_y) ? end_y : start_y,
-                    selTop = best_guess_top_padding - 25;
+                var end_y = (e.y || e.clientY);
+                var best_guess_top_padding = (end_y < start_y) ? end_y : start_y;
+                var selTop = best_guess_top_padding - 25;
                 
                 if (window.getSelection) {
                     var sel = window.getSelection();
@@ -102,7 +103,7 @@
                 tweet_url += '&hashtags=' + encodeURIComponent(QuoteTweet.hashtags);
             }
 
-            window.open(tweet_url, 'intent', 'scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420');
+            window.open(tweet_url);
             hidePopUp();
         });
 
